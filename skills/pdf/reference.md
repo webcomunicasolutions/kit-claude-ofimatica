@@ -337,7 +337,7 @@ qpdf --encrypt user_pass owner_pass 256 --print=none --modify=none -- input.pdf 
 qpdf --show-encryption encrypted.pdf
 
 # Remove password protection (requires password)
-qpdf --password=secret123 --decrypt encrypted.pdf decrypted.pdf
+qpdf --password=<TU_PASSWORD> --decrypt encrypted.pdf decrypted.pdf
 ```
 
 ## Advanced Python Techniques
@@ -574,7 +574,7 @@ from pypdf import PdfReader
 try:
     reader = PdfReader("encrypted.pdf")
     if reader.is_encrypted:
-        reader.decrypt("password")
+        reader.decrypt("<TU_PASSWORD>")
 except Exception as e:
     print(f"Failed to decrypt: {e}")
 ```
